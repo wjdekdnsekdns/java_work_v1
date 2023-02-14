@@ -4,6 +4,7 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 
 public class NoLayoutEx2 extends JFrame{
+	private JButton[] buttons = new JButton[4];
 	private JButton button1;
 	private JButton button2;
 	private JButton button3;
@@ -17,6 +18,10 @@ public class NoLayoutEx2 extends JFrame{
 		setTitle("좌표 연습 2");
 		setSize(1000, 1000);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		for(int i =0; i < buttons.length; i++) {
+			buttons[i] = new JButton("버튼" + i+1);
+		}
+		
 		button1 = new JButton("bt1");
 		button2 = new JButton("bt2");
 		button3 = new JButton("bt3");
