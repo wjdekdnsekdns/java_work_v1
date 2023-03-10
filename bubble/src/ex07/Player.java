@@ -21,6 +21,7 @@ public class Player extends JLabel implements Moveable {
 	// 벽에 충돌한 상태
 	private boolean leftWallCrash;
 	private boolean rightWallCrash;
+	private boolean topWallCrush;
 
 	// 플레이어 속도 상태
 	private final int SPEED = 4;
@@ -63,6 +64,14 @@ public class Player extends JLabel implements Moveable {
 
 	public void setRightWallCrash(boolean rightWallCrash) {
 		this.rightWallCrash = rightWallCrash;
+	}
+
+	public boolean isTopWallCrush() {
+		return topWallCrush;
+	}
+
+	public void setTopWallCrush(boolean topWallCrush) {
+		this.topWallCrush = topWallCrush;
 	}
 
 	public boolean isLeft() {
@@ -177,10 +186,8 @@ public class Player extends JLabel implements Moveable {
 						e.printStackTrace();
 					}
 				} // end of for
-
 				up = false;
 				down();
-
 			}
 		}).start();
 	}
@@ -197,6 +204,8 @@ public class Player extends JLabel implements Moveable {
 					y += JUMPSPEED;
 					setLocation(x, y);
 					down = false;
+
+					
 					try {
 						Thread.sleep(3);
 					} catch (InterruptedException e) {

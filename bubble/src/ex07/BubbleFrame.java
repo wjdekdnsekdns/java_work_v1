@@ -64,7 +64,9 @@ public class BubbleFrame extends JFrame {
 					// 로직 작성
 					break; // 세미 콜론
 				case KeyEvent.VK_UP:
-					player.up();
+					if(player.isUp() == false && player.isTopWallCrush() == false) {						
+						player.up();
+					}
 					break;
 				case KeyEvent.VK_DOWN:
 					player.down();

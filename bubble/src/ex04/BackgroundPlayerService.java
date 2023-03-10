@@ -35,26 +35,26 @@ public class BackgroundPlayerService implements Runnable {
 			// 오른쪽으로 갈 떄는 역시나 기준 좌표 지점을 보정해야 한다
 			// 기준 왼쪽 // 기준 오른쪽
 
-			Color leftColor = new Color(image.getRGB(player.getX() + 10, player.getY()+25));
-			Color rightColor = new Color(image.getRGB(player.getX() + 60, player.getY()+25));
+			Color leftColor = new Color(image.getRGB(player.getX() + 10, player.getY() + 25));
+			Color rightColor = new Color(image.getRGB(player.getX() + 65, player.getY() + 25));
 
 			// 바닥 충돌 감지
 			// Color bottomColorLeft = new Color(image.getRGB(player.getX() + 10,
 			// player.getY()+60));
 			// -65536, -16776961, -1
-			int bottomColorLeft = image.getRGB(player.getX() + 10, player.getY() + 55);
+			int bottomColorLeft = image.getRGB(player.getX() + 15, player.getY() + 55);
 			// -65536, -1677696, -1
-			int bottomColorrRight = image.getRGB(player.getX() + 45, player.getY() + 55);
+			int bottomColorrRight = image.getRGB(player.getX() + 60, player.getY() + 55);
 			// 하얀색이 아니면 바닥이다
-			if (bottomColorLeft != -1) {
-				System.out.println("여기는 바닥입니다");
+			if (bottomColorLeft + bottomColorrRight != -2) {
+				// System.out.println("여기는 바닥입니다");
 				player.setDown(false);
 			} else {
 				// 조금 점프 하는 순간 bottomColorLeft -> -1 이된다
 				// 위 화살표를 누르면 현재 65번 반복 돌면서 y 값 마이너스 해서
 				// 이미지를 위로 올리고있고 현재 y 좌표에서 +130 좌표 올리고 --> down() 메서드 호출
-				//올라 동시에 위+ 위 +위
-				if(player.isUp() == false && player.isDown() == false){
+				// 올라 동시에 위+ 위 +위
+				if (player.isUp() == false && player.isDown() == false) {
 					// 다운 메서드가 한번 호출 되어야 한다.
 					player.down();
 				}
@@ -72,7 +72,7 @@ public class BackgroundPlayerService implements Runnable {
 				player.setRightWallCrash(false);
 			}
 			try {
-				Thread.sleep(2);
+				Thread.sleep(3);
 			} catch (InterruptedException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();

@@ -13,7 +13,7 @@ public class BubbleFrame extends JFrame {
 
 	private JLabel backgroundMap;
 	private Player player;
-
+	private Monsterex monster; 
 	public BubbleFrame() {
 		initData();
 		setinitLayout();
@@ -25,7 +25,7 @@ public class BubbleFrame extends JFrame {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setContentPane(backgroundMap);
 		setSize(1000, 640);
-
+		monster = new Monsterex();
 		player = new Player();
 	}
 
@@ -36,6 +36,7 @@ public class BubbleFrame extends JFrame {
 		setVisible(true);
 
 		add(player);
+		add(monster);
 	}
 
 	private void addEventListener() {

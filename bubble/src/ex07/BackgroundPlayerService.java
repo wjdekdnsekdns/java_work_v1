@@ -37,6 +37,7 @@ public class BackgroundPlayerService implements Runnable {
 
 			Color leftColor = new Color(image.getRGB(player.getX() + 10, player.getY() + 25));
 			Color rightColor = new Color(image.getRGB(player.getX() + 65, player.getY() + 25));
+			Color topColor = new Color(image.getRGB(player.getX()+20, player.getY()-20));
 
 			// 바닥 충돌 감지
 			// Color bottomColorLeft = new Color(image.getRGB(player.getX() + 10,
@@ -59,7 +60,12 @@ public class BackgroundPlayerService implements Runnable {
 					player.down();
 				}
 			}
-
+			if(topColor.getRed() == 255 && topColor.getGreen() == 0 && topColor.getBlue() == 0) {
+				player.setUp(false);
+				player.setTopWallCrush(true);
+			}else {
+				player.setTopWallCrush(false);
+			}
 			if (rightColor.getRed() == 255 && rightColor.getGreen() == 0 && rightColor.getBlue() == 0) {
 				player.setRight(false);
 				// 벽에 충돌 했다 <---

@@ -80,8 +80,7 @@ public class Enemy extends JLabel implements Moveable {
 				}
 
 			}
-		}).start();
-		;
+		}).start();;
 
 	}
 

@@ -187,7 +187,14 @@ public class Player extends JLabel implements Moveable {
 					y += JUMPSPEED;
 					setLocation(x, y);
 					down = false;
+					try {
+						Thread.sleep(3);
+					} catch (InterruptedException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
 				}
+				
 				
 				// 상태값 다룰 떄는 상황이 변하면 초기화 처리를 잘 해야함
 			}

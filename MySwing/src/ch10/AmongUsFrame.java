@@ -99,10 +99,11 @@ public class AmongUsFrame extends JFrame implements KeyListener {
 				if(grayX == pinkX && grayY == pinkY) {
 					//pinkImage1 = null;
 					//grayImage1 = null;
+					pinkX += 10;
+					pinkY += 10;
 					try {
-						Thread.sleep(1000);
-						pinkX = 100;
-						pinkY = 100;
+						Thread.sleep(10);
+						
 					} catch (InterruptedException e) {
 						// TODO Auto-generated catch block
 						e.printStackTrace();

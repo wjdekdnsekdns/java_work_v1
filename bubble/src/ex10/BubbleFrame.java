@@ -40,7 +40,8 @@ public class BubbleFrame extends JFrame {
 		backgroundMap = new JLabel(new ImageIcon("images/backgroundMap.png"));
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setContentPane(backgroundMap);
-		setSize(1000, 640);
+		setSize(700, 440);
+		backgroundMap.setSize(1000, 640);
 		// 1. 부모의 주소값을 자식 객체한테 던져 주면 된다
 		// 2. 콜백메서드를 활용해서 구현 할 수 있다
 		player = new Player(mContext);
