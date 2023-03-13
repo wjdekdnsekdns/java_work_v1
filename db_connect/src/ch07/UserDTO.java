@@ -1,16 +1,17 @@
 package ch07;
 
 public class UserDTO {
-	private int blogId;
-	private String name;
-	private String content;
-	private int userId;
-	private String createDate;
-	private String replyId;
-	private String reply;
-	private String createReply;
+	 int blogId;
+	 String name;
+	 String content;
+	 int userId;
+	 String createDate;
+	 String replyId;
+	 String reply;
+	 String createReply;
 	
 	
+
 	public int getBlogId() {
 		return blogId;
 	}

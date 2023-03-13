@@ -20,7 +20,8 @@ public class MainTest1 {
 //			System.out.println("댓글 작성일자 : " + createReply);
 //		}
 		
-		UserDTO dto = blogDAO.insert(4, "정다운", "본문1", 1, "2021-11-25 13:53:45");
+		
+		
 		
 	}
 }
